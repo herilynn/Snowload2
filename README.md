@@ -2,7 +2,7 @@
 
 # "Snowload2" (original Snowload file was messed up) is a timer countdown until the upcoming 2024 New Years!
 
-# [New Years Countdown](https://herilynn.github.io/Snowload2/)
+[New Years Countdown](https://herilynn.github.io/Snowload2/)
 
 # Functionality:
 - currently there's a countdown that reflects the Eastern time zone (will hopefully be able to add an option to jump between different time zones)
