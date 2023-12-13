@@ -4,6 +4,25 @@ window.addEventListener('load', () => {
 
     const snowballCanvas = document.getElementById('snowballCanvas');
     const snowballCtx = snowballCanvas.getContext('2d');
+    const countdown = document.getElementById('timer');
+    const target = new Date('January 1, 2024 00:00:00').getTime();
+
+    function updateTimer() {
+      const currentTime = new Date().getTime();
+      const timeRemaining = target - currentTime;
+  
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24))
+      const hours = Math.floor(timeRemaining % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+  
+      countdown.innerHTML = `Time until New Years: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+  
+    // Update the timer every second
+    setInterval(updateTimer, 1000);
+  
+
 
     snowballCanvas.width = snowballCanvas.offsetWidth;
     snowballCanvas.height = snowballCanvas.offsetHeight;
@@ -11,15 +30,44 @@ window.addEventListener('load', () => {
     const snowballRadius = 30;
     const snowballY = snowballCanvas.height - snowballRadius;
 
+    const elf = [
+      new Image(), 
+      new Image(), 
+      new Image(), 
+      new Image(),
+      new Image(),
+      new Image()  
+    ];
+  
+    elf[0].src = "src/assets/link1.png";
+    elf[1].src = "src/assets/link2.png";
+    elf[2].src = "src/assets/link3.png";
+    elf[3].src = "src/assets/link4.png";
+    elf[4].src = "src/assets/link5.png";
+    elf[5].src = "src/assets/link6.png";
+
+    function animateElf(currentTime) {
+      for (let i = 0; i < elf.length; i++) {
+        const tempElf = i * 50
+        snowballCtx.drawImage(elf[i], tempElf, snowballY - 50, 50, 50)
+      }
+      requestAnimationFrame(animateElf);
+    }
+
+
     function updateSnowballPosition() {
         const currentTime = new Date();
+
         const dailyMinutes = 24 * 60; 
 
         const x = (currentTime.getHours() * 60 + currentTime.getMinutes()) * (snowballCanvas.width / dailyMinutes);
 
-        // snowballCtx.clearRect(0, 0, snowballCanvas.width, snowballCanvas.height);
+        const snowballSize = snowballRadius + (x / snowballCanvas.width) * 50; 
+
+
+        snowballCtx.clearRect(0, 0, snowballCanvas.width, snowballCanvas.height);
         snowballCtx.beginPath();
-        snowballCtx.arc(x, snowballY, snowballRadius, 0, 2 * Math.PI);
+        snowballCtx.arc(x, snowballY, snowballSize, 0, 2 * Math.PI);
         snowballCtx.fillStyle = 'lightblue';
         snowballCtx.fill();
         snowballCtx.stroke();
@@ -28,6 +76,7 @@ window.addEventListener('load', () => {
     }
 
     updateSnowballPosition();
+    // animateElf()
 
 
     //
@@ -55,9 +104,9 @@ window.addEventListener('load', () => {
     }
   
     function animate(currentTime) {
-      const deltaTime = currentTime - lastUpdateTime;
+      const diffTime = currentTime - lastUpdateTime;
   
-      if (deltaTime > 130) { 
+      if (diffTime > 120) { //determines how quickly image updates
         lastUpdateTime = currentTime;
   
         clear();
