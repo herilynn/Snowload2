@@ -4,22 +4,30 @@ window.addEventListener('load', () => {
 
     const snowballCanvas = document.getElementById('snowballCanvas');
     const snowballCtx = snowballCanvas.getContext('2d');
-  
-    canvas.width = 400;
-    canvas.height = 400;
 
-    snowballCanvas.width = snowballCanvas.offsetWidth //offset makes it fit the container
-    snowballCanvas.height = snowballCanvas.offsetHeight //offset makes it fit container
+    snowballCanvas.width = snowballCanvas.offsetWidth;
+    snowballCanvas.height = snowballCanvas.offsetHeight;
 
-    const snowballRadius = 10;
-    const snowballX = snowballCanvas.width / 2;
+    const snowballRadius = 30;
     const snowballY = snowballCanvas.height - snowballRadius;
 
-    snowballCtx.beginPath();
-    snowballCtx.arc(95, snowballY, snowballRadius, 40, 0, 2 * Math.PI);
-    snowballCtx.fillStyle = 'white'
-    snowballCtx.fill()
-    snowballCtx.stroke();
+    function updateSnowballPosition() {
+        const currentTime = new Date();
+        const dailyMinutes = 24 * 60; 
+
+        const x = (currentTime.getHours() * 60 + currentTime.getMinutes()) * (snowballCanvas.width / dailyMinutes);
+
+        // snowballCtx.clearRect(0, 0, snowballCanvas.width, snowballCanvas.height);
+        snowballCtx.beginPath();
+        snowballCtx.arc(x, snowballY, snowballRadius, 0, 2 * Math.PI);
+        snowballCtx.fillStyle = 'lightblue';
+        snowballCtx.fill();
+        snowballCtx.stroke();
+
+        requestAnimationFrame(updateSnowballPosition);
+    }
+
+    updateSnowballPosition();
 
 
     //
@@ -102,5 +110,6 @@ window.addEventListener('load', () => {
     }
   
     animate(0);
+    // animateSnowball()
   });
   
