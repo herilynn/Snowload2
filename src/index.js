@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
     canvas.height = 400;
   
     const items = [];
-    const maxItems = 8;
+    const maxItems = 10;
     let timer = 0;
     let lastUpdateTime = 0;
   
@@ -61,7 +61,7 @@ window.addEventListener('load', () => {
       clear();
       timer++;
   
-      if (timer % 100 === 0 || items.length < maxItems) {
+      if (timer % 10 === 0 || items.length < maxItems) {
         const x = Math.random() * (canvas.width - 20);
         const speed = Math.random() * 0.5 + 1;
   
