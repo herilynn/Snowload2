@@ -10,3 +10,15 @@
   background: linear-gradient(rgba(51, 10, 109, 0.7058823529), rgba(255, 0, 0, 0.624), rgba(0, 128, 45, 0.505));
   background-color: rgba(0, 0, 0, 0.461);
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.328);
+  position: absolute;
+}
