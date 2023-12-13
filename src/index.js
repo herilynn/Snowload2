@@ -1,9 +1,28 @@
 window.addEventListener('load', () => {
     const canvas = document.getElementById('backgroundCanvas');
     const ctx = canvas.getContext('2d');
+
+    const snowballCanvas = document.getElementById('snowballCanvas');
+    const snowballCtx = snowballCanvas.getContext('2d');
   
     canvas.width = 400;
     canvas.height = 400;
+
+    snowballCanvas.width = snowballCanvas.offsetWidth //offset makes it fit the container
+    snowballCanvas.height = snowballCanvas.offsetHeight //offset makes it fit container
+
+    const snowballRadius = 10;
+    const snowballX = snowballCanvas.width / 2;
+    const snowballY = snowballCanvas.height - snowballRadius;
+
+    snowballCtx.beginPath();
+    snowballCtx.arc(95, snowballY, snowballRadius, 40, 0, 2 * Math.PI);
+    snowballCtx.fillStyle = 'white'
+    snowballCtx.fill()
+    snowballCtx.stroke();
+
+
+    //
   
     const items = [];
     const maxItems = 10;

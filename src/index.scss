@@ -1,14 +1,31 @@
-#backgroundCanvas {
+@keyframes bgAnimation {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+  
+  #backgroundCanvas {
     width: 100%;
     height: 70%;
     position: relative;
-    // top: 14.4%;
-    // left: 6%;
     border-radius: 10px;
-    background:linear-gradient(#330a6db4, rgba(255, 0, 0, 0.624), rgba(0, 128, 45, 0.505));
-    background-color: rgba(0, 0, 0, 0.461);
-}
+    background: linear-gradient(to left,rgba(222, 213, 222, 0), rgba(0, 128, 0, 0.519), rgba(255, 0, 0, 0.489),rgba(144, 144, 16, 0.37), rgba(0, 128, 0, 0.353), rgba(0, 0, 255, 0.367), rgba(222, 213, 222, 0));
+    background-size: 1400% 100%;
+    animation: bgAnimation 20s linear infinite;
+    background-color: rgb(0, 0, 0);
+  }
+  
 
+#snowballCanvas {
+    background-color: rgba(165, 153, 153, 0.506);
+    padding-top: 10px;
+    width: 100%;
+    height: 20%;
+    position: relative;
+}
 
 body {
     margin: 0;
@@ -23,7 +40,7 @@ body {
     .bg {
         width: 100%;
         height: 100%;
-        background-color: rgba(13, 10, 10, 0.83);
+        background-color: rgba(185, 90, 112, 0.83);
         position: absolute;
         
     }
