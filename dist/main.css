@@ -31,7 +31,6 @@
 .timer {
   position: relative;
   font-size: 20px;
-  left: 40%;
   color: rgb(133, 231, 14);
   text-shadow: 1px 1px 2px purple, 0 0 1em red, 0 0 0.2em blue;
 }
@@ -58,4 +57,17 @@ body {
   border-radius: 15px;
   box-sizing: border-box;
   position: relative;
+}
+
+#soundButton {
+  position: absolute;
+  left: 92%;
+  top: 5.7%;
+  border-radius: 5px;
+  height: 5%;
+  width: 7%;
+  background-color: rgba(229, 229, 145, 0.7215686275);
+  color: yellow;
+  font-weight: bold;
+  border: none;
 }

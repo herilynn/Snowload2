@@ -5,7 +5,30 @@ window.addEventListener('load', () => {
     const snowballCanvas = document.getElementById('snowballCanvas');
     const snowballCtx = snowballCanvas.getContext('2d');
     const countdown = document.getElementById('timer');
+    const bgSound = document.getElementById('bgSound')
     const target = new Date('January 1, 2024 00:00:00').getTime();
+
+    let currentAudio = false;
+
+    function toggleSound() {
+      
+      if (currentAudio) {
+        bgSound.pause();
+        soundButton.textContent = 'Sound: Off';
+        soundButton.style.color = 'red';
+        soundButton.style.textShadow = '2px 2px 8px orange, 0 0 1em yellow, 0 0 0.2em red';
+      } else {
+        bgSound.play();
+        soundButton.textContent = 'Sound: On'; 
+        soundButton.style.color = 'greenyellow'
+        soundButton.style.textShadow = '2px 2px 8px blue, 0 0 1em yellow, 0 0 0.2em green';
+      }
+      currentAudio = !currentAudio;
+    }
+
+    const soundButton = document.getElementById('soundButton');
+    soundButton.addEventListener('click', toggleSound);
+
 
     function updateTimer() {
       const currentTime = new Date().getTime();
