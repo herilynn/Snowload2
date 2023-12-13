@@ -1,3 +1,5 @@
+# DISCLAIMER: Your screen isn't actually loading most likely; that's just the favicon
+
 # "Snowload2" (original Snowload file was messed up) is a timer countdown until the upcoming 2024 New Years!
 
 # Functionality:
