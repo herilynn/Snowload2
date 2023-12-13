@@ -1,13 +1,14 @@
 #backgroundCanvas {
-    width: 70%;
-    height: 100%;
+    width: 88%;
+    height: 80%;
     position: relative;
-    top: 14.4%;
-    left: 14.5%;
-    // border-radius: 3px;
+    // top: 14.4%;
+    left: 6%;
+    border-radius: 10px;
     background:linear-gradient(#330a6db4, rgba(255, 0, 0, 0.624), rgba(0, 128, 45, 0.505));
     background-color: rgba(0, 0, 0, 0.461);
 }
+
 
 body {
     margin: 0;
@@ -15,14 +16,38 @@ body {
 }
 
 // html {
-//     margin: 0;
-//     padding: 0;
-// }
-
-.bg {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.328);
-    position: absolute;
+    //     margin: 0;
+    //     padding: 0;
+    // }
     
+    .bg {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(13, 10, 10, 0.83);
+        position: absolute;
+        
+    }
+    // #counter {
+    //     color: white;
+    //     background-color: rgba(57, 74, 24, 0.646);
+    //     text-align: center;
+    //     padding: 5px;
+    //     height: 80%;
+    //     width: 20%;
+    //     left: 75%;
+    //     border-radius: 15px;
+    //     box-sizing: border-box;
+    //     position: absolute;
+    //   }
+
+.counter {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(221, 11, 11, 0.8);    background:linear-gradient(#e82712b4, rgba(237, 233, 233, 0.98), rgba(128, 9, 0, 0.505));    text-align: center;
+    // padding: 5px;
+    height: auto;
+    width: 100%;
+    // left: 75%;
+    border-radius: 15px;
+    box-sizing: border-box;
+    position: relative;
 }
